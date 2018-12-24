@@ -1,13 +1,7 @@
-function print() {
-    var args = Array.from(arguments);
-    console.log(args.join(","));
-}
+const Util = require("../privatelib/pureutil");
 
-function printGapLine(tag) {
-    console.log("-----------------" + tag + "-----------------------")
-}
-print("learn create object");
-printGapLine("{} decleration");
+Util.print("learn create object");
+Util.printGapLine("{} decleration");
 var Person = {
     name: "job",
     age: 90,
@@ -17,10 +11,10 @@ var Person = {
     }
 }
 
-console.log(Person);
-console.log(Person.age);
+Util.print(Person);
+Util.print(Person.age);
 Person.sayHello();
-printGapLine("factory function");
+Util.printGapLine("factory function");
 function createObj() {
     var obj = {};
     obj.book = "Learn Perl";
@@ -32,7 +26,7 @@ function createObj() {
 
 var me = createObj();
 me.printSomething();
-printGapLine("constructor");
+Util.printGapLine("constructor");
 function People(name, bio) {
     this.name = name;
     this.age = 34;
@@ -44,7 +38,7 @@ function People(name, bio) {
 var boboy = new People("boboy cash");
 boboy.sayHello();
 
-printGapLine("Object");
+Util.printGapLine("Object");
 
 var lumia = new Object();
 lumia.name = "lumia";
@@ -61,9 +55,9 @@ var facebook = new Object({
     value: 2300,
 });
 
-print(facebook.brand + "--->" + facebook.value);
+Util.print(facebook.brand + "--->" + facebook.value);
 
-printGapLine("create in object");
+Util.printGapLine("create in object");
 var xiaoMing = Object.create(boboy);
 xiaoMing.name = "Ming.Xiao";
 xiaoMing.sayHello();
